@@ -1,12 +1,8 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <title>paqrat</title>
-  </head>
-  <body>
-    <h1>{{ data.site.title }}</h1>
-    <div className="test">{{ content | safe }}</div>
-  </body>
-</html>
+{% extends "layouts/default.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <h1>{{ data.site.title }}</h1>
+  <div>{{ content | safe }}</div>
+{% endblock %}
