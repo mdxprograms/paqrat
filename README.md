@@ -34,3 +34,9 @@ If your template is `templates/index.html` then your content would be in
 `content/index.md`.
 
 _or_ `templates/about.html` would use `content/about.md` etc...
+
+### Build
+
+`python3 build_static.py`
+
+This will create a build directory with static files ready for deployment.
