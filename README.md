@@ -26,14 +26,12 @@ ie: `{{ data.site.title }}` would be associated with `/data/site.yml`
 
 ### Content
 
-Basic content entries for each page are under `/content`.
+Basic content entries are under `/content`.
 
-Content files fall in the same pattern as their associated templates.
+You can pass an array of content files to use in your route template: `get_content(['index, about'])`
+This will apply it to the templates `content` variable `{{ content.index }} {{ content.about }}`
+This allows for separating content into any markdown file in `/content` and using it in multiple areas and templates.
 
-If your template is `templates/index.html` then your content would be in
-`content/index.md`.
-
-_or_ `templates/about.html` would use `content/about.md` etc...
 
 ### Build
 
