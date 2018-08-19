@@ -23,7 +23,9 @@ Data in `/data` will be associated with the `data` variable in all pages.
 
 Each data file is added to the data `dict` and it's associated filename is added as a key to it's data varaiables
 
-ie: `{{ data.site.title }}` would be associated with `/data/site.yml`
+The _only_ exception is anything in config.yml will be under `data.site`.
+
+ie: `{{ data.site.title }}` would be associated with `config.yml`
 
 ### Content
 
@@ -51,7 +53,6 @@ def index():
                            content=get_content(content),
                            data=data)
 ```
-
 
 ### Build
 
