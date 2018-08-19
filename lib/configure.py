@@ -7,9 +7,14 @@ config = {}
 with open("config.yml", "r") as f:
     config = yaml.load(f.read())
 
-content_dir = config["content_dir"] or "content"
-data_dir = config["data_dir"] or "data"
+content_dir = "src/" + config["content_dir"] or "content"
+data_dir = "src/" + config["data_dir"] or "data"
+templates_dir = "src/" + config["templates_dir"] or "src/templates"
 data_files = listdir(data_dir)
+
+
+def get_templates_folder():
+    return templates_dir
 
 
 def get_data():

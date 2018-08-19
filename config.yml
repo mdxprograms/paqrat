@@ -4,3 +4,4 @@ url: "127.0.0.1:5000"
 # directories
 content_dir: content
 data_dir: data
+templates_dir: templates

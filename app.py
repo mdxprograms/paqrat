@@ -1,7 +1,7 @@
 from flask import Flask, render_template
-from lib.configure import get_content, get_data
+from lib.configure import get_templates_folder, get_content, get_data
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=get_templates_folder())
 
 
 @app.route("/")
