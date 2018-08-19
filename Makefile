@@ -10,4 +10,4 @@ dev:
 
 build:
 	rm -rf ./build
-	./venv/bin/python3 ./build_static.py
+	python3 ./build_static.py
