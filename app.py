@@ -11,7 +11,7 @@ def index():
                            data=get_data())
 
 
-@app.route("/about")
+@app.route("/about/")
 def about():
     return render_template("about.html",
                            content=get_content(["about"]),
