@@ -2,9 +2,13 @@ import yaml
 from os import listdir
 from markdown2 import markdown
 
+config = {}
 
-content_dir = "content"
-data_dir = "data"
+with open("config.yml", "r") as f:
+    config = yaml.load(f.read())
+
+content_dir = config["content_dir"] or "content"
+data_dir = config["data_dir"] or "data"
 data_files = listdir(data_dir)
 
 
@@ -13,6 +17,8 @@ def get_data():
     for file in data_files:
         with open(f"{data_dir}/{file}", "r") as f:
             data[file.replace(".yml", "")] = yaml.load(f.read())
+
+    data["site"] = config
 
     return data
 

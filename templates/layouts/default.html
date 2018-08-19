@@ -1,3 +1,5 @@
+{% from "macros/navbar.html" import navbar %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,6 +8,7 @@
     <title>{% block title %}{% endblock %} {% if data.site.title %}{{ data.site.title }}{% endif %}</title>
   </head>
   <body>
+    {{navbar(data.nav)}}
     {% block content %}{% endblock %}
     {% block footer %}{% endblock %}
   </body>

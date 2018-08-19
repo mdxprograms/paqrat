@@ -11,6 +11,13 @@ def index():
                            data=get_data())
 
 
+@app.route("/about")
+def about():
+    return render_template("about.html",
+                           content=get_content(["about"]),
+                           data=get_data())
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html", data=get_data()), 404
