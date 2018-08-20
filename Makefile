@@ -1,12 +1,15 @@
 .PHONY: build
 
-install:
-	echo "Installing packages from requirements.txt"
+setup:
+	echo "Running initial setup"
+	python3 -m venv venv
+	. ./venv/bin/activate
 	./venv/bin/pip3 install -r requirements.txt
 
 dev:
-	echo "Running dev server"
-	FLASK_APP=app.py FLASK_ENV=development flask run
+	. ./venv/bin/activate; \
+	./venv/bin/pip3 install -r requirements.txt; \
+	FLASK_APP=app.py FLASK_ENV=development flask run; \
 
 build:
 	rm -rf ./build
