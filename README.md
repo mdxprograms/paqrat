@@ -52,6 +52,6 @@ def index():
 
 ### Build
 
-`python3 build_static.py`
+`make build`
 
 This will create a build directory with static files ready for deployment.
