@@ -13,5 +13,4 @@ dev:
 
 build:
 	rm -rf ./build
-	. ./venv/bin/activate; \
-	python3 ./lib/build_static.py
+	./venv/bin/python3 ./lib/build_static.py
