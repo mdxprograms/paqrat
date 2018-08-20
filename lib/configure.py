@@ -1,6 +1,7 @@
 import yaml
 from os import listdir
 from markdown2 import markdown
+from flask import render_template
 
 config = {}
 
@@ -11,6 +12,13 @@ content_dir = "src/" + config["content_dir"] or "content"
 data_dir = "src/" + config["data_dir"] or "data"
 templates_dir = "src/" + config["templates_dir"] or "src/templates"
 data_files = listdir(data_dir)
+
+
+def render(template, content={}):
+    """
+    Automatically include data in render_template
+    """
+    return render_template(template, content=content, data=get_data())
 
 
 def get_templates_folder():
