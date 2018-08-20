@@ -14,3 +14,7 @@ dev:
 build:
 	rm -rf ./build
 	./venv/bin/python3 ./lib/build_static.py
+
+build_prod:
+	rm -rf ./build
+	python3 ./lib/build_static.py
