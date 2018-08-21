@@ -1,7 +1,9 @@
 from flask import Flask
 import lib.configure as paqrat
 
-app = Flask(__name__, template_folder=paqrat.get_templates_folder())
+app = Flask(__name__,
+            template_folder=paqrat.get_templates_folder(),
+            static_folder=paqrat.get_static_folder())
 
 
 @app.route("/")

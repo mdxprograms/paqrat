@@ -11,14 +11,25 @@ with open("config.yml", "r") as f:
 content_dir = "src/" + config["content_dir"] or "content"
 data_dir = "src/" + config["data_dir"] or "data"
 templates_dir = "src/" + config["templates_dir"] or "src/templates"
+static_dir = "src/" + config["static_dir"] or "src/static_dir"
 data_files = listdir(data_dir)
 
 
 def render(template, content={}):
     """
+    :args: none
+    :returns: render_template with data passed
     Automatically include data in render_template
     """
     return render_template(template, content=content, data=get_data())
+
+
+def get_static_folder():
+    """get_static_folder.
+    :args: none
+    :returns: path to static folder
+    """
+    return static_dir
 
 
 def get_templates_folder():
